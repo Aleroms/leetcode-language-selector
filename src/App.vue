@@ -1,18 +1,36 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { ref } from 'vue'
-import Menubar from 'primevue/menubar'
+import { usePrimeVue } from 'primevue/config'
 
+//primevue
+import Menubar from 'primevue/menubar'
+import Button from 'primevue/button'
+
+const router = useRouter()
+const currentTheme = ref('lara-light-green')
+const PrimeVue = usePrimeVue()
 const items = ref([
   {
     label: 'Home',
-    icon: 'pi pi-home'
+    icon: 'pi pi-home',
+    route: '/',
+    command: () => router.push('/')
   },
   {
     label: 'Manage',
-    icon: 'pi'
+    icon: 'pi pi-cog',
+    command: () => router.push('/manage')
   }
 ])
+
+const toggleTheme = () => {
+  console.log('click')
+  let nextTheme = currentTheme.value === 'lara-light-green' ? 'lara-dark-green' : 'lara-light-green'
+  PrimeVue.changeTheme(currentTheme.value, nextTheme, 'theme-link', () => {})
+  currentTheme.value = nextTheme
+}
 </script>
 
 <template>
@@ -22,57 +40,47 @@ const items = ref([
         <svg
           width="35"
           height="40"
-          viewBox="0 0 35 40"
-          fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-2rem"
+          viewBox="0 0 24 24"
+          id="leetcode"
         >
           <path
-            d="M25.87 18.05L23.16 17.45L25.27 20.46V29.78L32.49 23.76V13.53L29.18 14.73L25.87 18.04V18.05ZM25.27 35.49L29.18 31.58V27.67L25.27 30.98V35.49ZM20.16 17.14H20.03H20.17H20.16ZM30.1 5.19L34.89 4.81L33.08 12.33L24.1 15.67L30.08 5.2L30.1 5.19ZM5.72 14.74L2.41 13.54V23.77L9.63 29.79V20.47L11.74 17.46L9.03 18.06L5.72 14.75V14.74ZM9.63 30.98L5.72 27.67V31.58L9.63 35.49V30.98ZM4.8 5.2L10.78 15.67L1.81 12.33L0 4.81L4.79 5.19L4.8 5.2ZM24.37 21.05V34.59L22.56 37.29L20.46 39.4H14.44L12.34 37.29L10.53 34.59V21.05L12.42 18.23L17.45 26.8L22.48 18.23L24.37 21.05ZM22.85 0L22.57 0.69L17.45 13.08L12.33 0.69L12.05 0H22.85Z"
-            fill="var(--primary-color)"
-          />
+            fill="#B3B1B0"
+            d="M22 14.355c0-.742-.564-1.346-1.26-1.346H10.676c-.696 0-1.26.604-1.26 1.346s.563 1.346 1.26 1.346H20.74c.696.001 1.26-.603 1.26-1.346z"
+          ></path>
           <path
-            d="M30.69 4.21L24.37 4.81L22.57 0.69L22.86 0H26.48L30.69 4.21ZM23.75 5.67L22.66 3.08L18.05 14.24V17.14H19.7H20.03H20.16H20.2L24.1 15.7L30.11 5.19L23.75 5.67ZM4.21002 4.21L10.53 4.81L12.33 0.69L12.05 0H8.43002L4.22002 4.21H4.21002ZM21.9 17.4L20.6 18.2H14.3L13 17.4L12.4 18.2L12.42 18.23L17.45 26.8L22.48 18.23L22.5 18.2L21.9 17.4ZM4.79002 5.19L10.8 15.7L14.7 17.14H14.74H15.2H16.85V14.24L12.24 3.09L11.15 5.68L4.79002 5.2V5.19Z"
-            fill="var(--text-color)"
-          />
+            fill="#E7A41F"
+            d="m3.482 18.187 4.313 4.361c.973.979 2.318 1.452 3.803 1.452 1.485 0 2.83-.512 3.805-1.494l2.588-2.637c.51-.514.492-1.365-.039-1.9-.531-.535-1.375-.553-1.884-.039l-2.676 2.607c-.462.467-1.102.662-1.809.662s-1.346-.195-1.81-.662l-4.298-4.363c-.463-.467-.696-1.15-.696-1.863 0-.713.233-1.357.696-1.824l4.285-4.38c.463-.467 1.116-.645 1.822-.645s1.346.195 1.809.662l2.676 2.606c.51.515 1.354.497 1.885-.038.531-.536.549-1.387.039-1.901l-2.588-2.636a4.994 4.994 0 0 0-2.392-1.33l-.034-.007 2.447-2.503c.512-.514.494-1.366-.037-1.901-.531-.535-1.376-.552-1.887-.038l-10.018 10.1C2.509 11.458 2 12.813 2 14.311c0 1.498.509 2.896 1.482 3.876z"
+          ></path>
+          <path
+            fill="#070706"
+            d="M8.115 22.814a2.109 2.109 0 0 1-.474-.361c-1.327-1.333-2.66-2.66-3.984-3.997-1.989-2.008-2.302-4.937-.786-7.32a6 6 0 0 1 .839-1.004L13.333.489c.625-.626 1.498-.652 2.079-.067.56.563.527 1.455-.078 2.066-.769.776-1.539 1.55-2.309 2.325-.041.122-.14.2-.225.287-.863.876-1.75 1.729-2.601 2.618-.111.116-.262.186-.372.305-1.423 1.423-2.863 2.83-4.266 4.272-1.135 1.167-1.097 2.938.068 4.127 1.308 1.336 2.639 2.65 3.961 3.974.067.067.136.132.204.198.468.303.474 1.25.183 1.671-.321.465-.74.75-1.333.728-.199-.006-.363-.086-.529-.179z"
+          ></path>
         </svg>
       </template>
-      <template #item="{ item, props, hasSubmenu, root }">
-        <a v-ripple class="flex align-items-center" v-bind="props.action">
-          <span :class="item.icon"></span>
-          <span class="ml-2">{{ item.label }}</span>
-          <Badge
-            v-if="item.badge"
-            :class="{ 'ml-auto': !root, 'ml-2': root }"
-            :value="item.badge"
-          />
-          <span
-            v-if="item.shortcut"
-            class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1"
-            >{{ item.shortcut }}</span
-          >
-          <i
-            v-if="hasSubmenu"
-            :class="[
-              'pi pi-angle-down text-primary',
-              { 'pi-angle-down ml-2': root, 'pi-angle-right ml-auto': !root }
-            ]"
-          ></i>
-        </a>
-      </template>
       <template #end>
-        <div class="flex align-items-center gap-2">
-          <InputText placeholder="Search" type="text" class="w-8rem sm:w-auto" />
-          <Avatar
-            image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
-            shape="circle"
-          />
+        <div class="card-start">
+          <a
+            href="https://github.com/Aleroms/leetcode-language-selector"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button outlined icon="pi pi-github" severity="secondary" />
+          </a>
+          <Button outlined icon="pi pi-sun" @click="toggleTheme" severity="secondary" />
         </div>
       </template>
-    </Menubar>  
+    </Menubar>
   </header>
 
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.card-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+</style>
