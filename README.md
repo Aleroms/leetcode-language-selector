@@ -1,35 +1,7 @@
-# leetcode-language-selector
+# Leetcode Language Selector
 
-This template should help get you started developing with Vue 3 in Vite.
+I wanted to get better at languages I got rusty and thought "what if I create a web app that randomly selects that day's leetcode challenge's language?" and so I did.
 
-## Recommended IDE Setup
+Leetcode Language Selector selects which language to use that day. Provide it the languages you want to cycle in your rotation, as well with some options and now you can get back to what's important - grinding leetcode challenges.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+created by (https://santiagomorales.dev)[santiago morales]
