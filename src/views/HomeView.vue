@@ -12,16 +12,18 @@ import LanguageDetail from '@/components/LanguageDetail.vue'
       <Button label="randomize" icon="pi pi-sync" />
     </div>
     <Divider />
-    <h2>Language!</h2>
-    <Divider />
+    <h2>Highlight Language</h2>
+    <LanguageDetail />
+    <h2>Fallback Language</h2>
     <LanguageDetail />
   </div>
 </template>
 
 <style lang="scss">
 .home-wrapper {
-  margin: 1rem;
+  margin: 1rem auto;
   padding: 1rem;
+  max-width: 1200px;
 
   .banner {
     display: flex;

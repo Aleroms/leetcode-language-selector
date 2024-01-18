@@ -1,98 +1,97 @@
 [
   {
     "name": "C++",
-    "id": "cpp",
+    "url": "cpp.svg",
     "desc": "test"
   },
   {
     "name": "Java",
-    "id": "java",
+    "url": "java.svg",
     "desc": "test"
   },
   {
     "name": "Python",
-    "id": "python",
+    "url": "python.svg",
     "desc": "test"
   },
   {
     "name": "Python3",
-    "id": "python3",
+    "url": "python.svg",
     "desc": "test"
   },
   {
     "name": "C",
-    "id": "c",
+    "url": "c.svg",
     "desc": "test"
   },
   {
     "name": "C#",
-    "id": "csharp",
+    "url": "csharp.svg",
     "desc": "test"
   },
   {
     "name": "JavaScript",
-    "id": "javascript",
+    "url": "javascript.svg",
     "desc": "test"
   },
   {
     "name": "TypeScript",
-    "id": "typescript",
+    "url": "typescript.svg",
     "desc": "test"
   },
   {
     "name": "PHP",
-    "id": "php",
+    "url": "php.svg",
     "desc": "test"
   },
   {
     "name": "Swift",
-    "id": "swift",
+    "url": "swift.svg",
     "desc": "test"
   },
   {
     "name": "Kotlin",
-    "id": "koltin",
+    "url": "koltin.svg",
     "desc": "test"
   },
   {
     "name": "Dart",
-    "id": "dart",
+    "url": "dart.svg",
     "desc": "test"
   },
   {
     "name": "Go",
-    "id": "go",
+    "url": "go.svg",
     "desc": "test"
   },
   {
     "name": "Ruby",
-    "id": "ruby",
+    "url": "ruby.svg",
     "desc": "test"
   },
   {
     "name": "Scala",
-    "id": "scala",
+    "url": "scala.svg",
     "desc": "test"
   },
   {
     "name": "Rust",
-    "id": "rust",
+    "url": "rust.svg",
     "desc": "test"
   },
   {
     "name": "Racket",
-    "id": "racket",
+    "url": "racket.svg",
     "desc": "test"
   },
   {
     "name": "Erlang",
-    "id": "erlang",
+    "url": "erlang.svg",
     "desc": "test"
   },
   {
     "name": "Elixir",
-    "id": "elixir",
+    "url": "elixir.svg",
     "desc": "test"
   }
 ]
-
