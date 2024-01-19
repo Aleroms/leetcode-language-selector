@@ -6,6 +6,7 @@
       <SelectForm />
       <Divider />
     </div>
+    <LanguageList />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import LeetcodeIcon from '@/components/LeetcodeIcon.vue'
 import Divider from 'primevue/divider'
 import SelectForm from '@/components/SelectForm.vue'
+import LanguageList from '@/components/LanguageList.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -27,6 +29,4 @@ import SelectForm from '@/components/SelectForm.vue'
   align-items: center;
   justify-content: center;
 }
-
-
 </style>

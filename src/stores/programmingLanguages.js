@@ -10,8 +10,14 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
   actions: {
     add(lang) {
       console.log(lang)
+      //only add new items
       if (lang !== '' && !this.userLanguages.find((item) => item.name === lang.name)) {
-        this.userLanguages.push(lang)
+        const date = new Date()
+        this.userLanguages.push({
+          ...lang,
+          times_used: 0,
+          last_used: `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+        })
       }
     },
     remove(id) {
