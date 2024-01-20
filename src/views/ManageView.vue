@@ -6,7 +6,8 @@
       <SelectForm />
       <Divider />
     </div>
-    <LanguageList />
+    <LanguageList style="margin: 2rem 0 3rem" />
+    <LanguageHistoryList />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import LeetcodeIcon from '@/components/LeetcodeIcon.vue'
 import Divider from 'primevue/divider'
 import SelectForm from '@/components/SelectForm.vue'
 import LanguageList from '@/components/LanguageList.vue'
+import LanguageHistoryList from '@/components/LanguageHistoryList.vue'
 </script>
 
 <style lang="scss" scoped>

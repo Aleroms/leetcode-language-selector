@@ -5,11 +5,11 @@ import languages from '@/assets/leetcode/languages.json'
 export const useLeetcodeStore = defineStore('leetcodeStore', {
   state: () => ({
     userLanguages: useLocalStorage('userLanguages', []),
-    collection: languages
+    collection: languages,
+    history: useLocalStorage('history', [])
   }),
   actions: {
     add(lang) {
-      console.log(lang)
       //only add new items
       if (lang !== '' && !this.userLanguages.find((item) => item.name === lang.name)) {
         const date = new Date()
@@ -24,6 +24,16 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
       this.userLanguages = this.userLanguages.filter((l) => {
         return l.name !== id
       })
+    },
+    push(addToHistory) {
+      //lang_arr = [{},{},...] length 1+
+      const date = new Date()
+      addToHistory.forEach((item) =>
+        this.history.push({
+          ...item,
+          date: `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+        })
+      )
     }
   }
 })
