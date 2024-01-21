@@ -6,7 +6,8 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
   state: () => ({
     userLanguages: useLocalStorage('userLanguages', []),
     collection: languages,
-    history: useLocalStorage('history', [])
+    history: useLocalStorage('history', []),
+    options: useLocalStorage('options', { challenges: 0, include_recent: false })
   }),
   actions: {
     add(lang) {
@@ -34,6 +35,9 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
           date: `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
         })
       )
+    },
+    updateOptions(options) {
+      this.options = options
     }
   }
 })

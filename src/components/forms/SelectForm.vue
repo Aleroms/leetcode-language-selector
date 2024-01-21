@@ -50,7 +50,8 @@ const handleSubmit = () => {
 <style lang="scss" scoped>
 #language-selector {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+  margin: 1rem 0;
 }
 .lang-ddm {
   display: flex;
