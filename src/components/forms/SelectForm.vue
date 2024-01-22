@@ -40,6 +40,7 @@ import { useLeetcodeStore } from '@/stores/programmingLanguages'
 const leetcodeStore = useLeetcodeStore()
 const dropDownItem = ref('')
 const handleSubmit = () => {
+
   if (dropDownItem.value !== '') {
     leetcodeStore.add(dropDownItem.value)
     dropDownItem.value = ''

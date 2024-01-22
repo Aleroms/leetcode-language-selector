@@ -1,8 +1,9 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import { usePrimeVue } from 'primevue/config'
+import { useLeetcodeStore } from './stores/programmingLanguages'
 
 //primevue
 import Menubar from 'primevue/menubar'
@@ -27,6 +28,7 @@ const items = ref([
     command: () => router.push('/manage')
   }
 ])
+const leetcodeStore = useLeetcodeStore()
 
 const toggleTheme = () => {
   console.log('click')
@@ -34,6 +36,9 @@ const toggleTheme = () => {
   PrimeVue.changeTheme(currentTheme.value, nextTheme, 'theme-link', () => {})
   currentTheme.value = nextTheme
 }
+onBeforeMount(() => {
+  leetcodeStore.initialize()
+})
 </script>
 
 <template>
@@ -78,7 +83,7 @@ const toggleTheme = () => {
   justify-content: center;
   gap: 1rem;
 }
-#footer{
+#footer {
   text-align: center;
 }
 </style>

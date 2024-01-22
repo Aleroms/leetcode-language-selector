@@ -3,7 +3,9 @@
   <Panel header="options" toggleable class="options-panel">
     <form @submit.prevent="onSubmit" id="options-form">
       <div class="form-item">
-        <label for="challenges">How many to solve per day?</label>
+        <label for="challenges"
+          >How many to solve per day?</label
+        >
         <InputNumber
           v-model="value"
           inputId="challenges"
@@ -12,12 +14,13 @@
           :class="{ 'p-invalid': errorMessage }"
           aria-describedby="number-error"
         />
+        <label for="challenges">Currently ({{ leetcodeStore.options.challenges }})</label>
         <small class="p-error" id="number-error">{{
           errorMessage || (errors.length > 0 ? errors : '&nbsp;')
         }}</small>
       </div>
       <div class="form-item">
-        <label for="include_recent">Include language(s) most recently used? </label>
+        <label for="include_recent">Exclude language(s) most recently used? </label>
         <Checkbox v-model="include_recent" :binary="true" inputId="include_recent" />
       </div>
       <Button label="submit" type="submit" />

@@ -2,29 +2,41 @@
   <section id="leetcode-language-list">
     <DataTable :value="leetcodeStore.history" tableStyle="min-width: 50rem">
       <template #header>History</template>
-      <Column field="name" header="Name"></Column>
+      <Column field="name" header="Name">
+        <template #body="slotProps">
+          <div>
+            <span v-for="(item, index) in slotProps.data" :key="item.name"
+              >{{ item.name }}{{ index < slotProps.data.length - 1 ? ', ' : '' }}</span
+            >
+          </div>
+        </template>
+      </Column>
       <Column field="url" header="Image">
         <template #body="slotProps">
-          <img
-            width="40"
-            height="40"
-            :src="`/svg/${slotProps.data.url}`"
-            :alt="slotProps.data.name"
-          />
+          <div>
+            <img
+              v-for="item in slotProps.data"
+              :key="item.name"
+              width="35"
+              height="35"
+              :src="`/svg/${item.url}`"
+              :alt="item.name"
+            />
+          </div>
         </template>
       </Column>
       <Column field="last_used" header="Date">
         <template #body="slotProps">
-          {{ slotProps.data.times_used > 0 ? slotProps.data.last_used : 'not used yet' }}...
+          {{
+            slotProps.data[slotProps.data.length - 1].times_used > 0
+              ? slotProps.data[slotProps.data.length - 1].last_used
+              : 'not used yet...'
+          }}
         </template>
       </Column>
       <template #footer>
         <div v-if="leetcodeStore.history.length !== 0">
-          there {{ leetcodeStore.userLanguages.length > 1 ? 'are' : 'is' }}
-          {{ leetcodeStore.userLanguages.length }} language{{
-            leetcodeStore.userLanguages.length > 1 ? 's' : ''
-          }}
-          to code in...
+          total {{ leetcodeStore.history.length }}
         </div>
         <div v-else>no history yet!</div>
       </template>

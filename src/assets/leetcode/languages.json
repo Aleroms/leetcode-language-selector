@@ -2,96 +2,115 @@
   {
     "name": "C++",
     "url": "cpp.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://cplusplus.com/"
   },
   {
     "name": "Java",
     "url": "java.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://docs.oracle.com/en/java/"
   },
   {
     "name": "Python",
     "url": "python.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://docs.python.org/3/"
   },
   {
     "name": "Python3",
     "url": "python.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://docs.python.org/3/"
   },
   {
     "name": "C",
     "url": "c.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://devdocs.io/c/"
   },
   {
     "name": "C#",
     "url": "csharp.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://learn.microsoft.com/en-us/dotnet/csharp/"
   },
   {
     "name": "JavaScript",
     "url": "javascript.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://developer.mozilla.org/"
   },
   {
     "name": "TypeScript",
     "url": "typescript.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://www.typescriptlang.org/docs/"
   },
   {
     "name": "PHP",
     "url": "php.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://www.php.net/docs.php"
   },
   {
     "name": "Swift",
     "url": "swift.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://www.swift.org/documentation/"
   },
   {
     "name": "Kotlin",
     "url": "koltin.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://kotlinlang.org/docs/home.html"
   },
   {
     "name": "Dart",
     "url": "dart.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://dart.dev/guides"
   },
   {
     "name": "Go",
     "url": "go.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://go.dev/doc/"
   },
   {
     "name": "Ruby",
     "url": "ruby.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://www.ruby-lang.org/en/documentation/"
   },
   {
     "name": "Scala",
     "url": "scala.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://docs.scala-lang.org/"
   },
   {
     "name": "Rust",
     "url": "rust.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://doc.rust-lang.org/beta/"
   },
   {
     "name": "Racket",
     "url": "racket.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://docs.racket-lang.org/"
   },
   {
     "name": "Erlang",
     "url": "erlang.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://www.erlang.org/docs"
   },
   {
     "name": "Elixir",
     "url": "elixir-lang-icon.svg",
-    "desc": "test"
+    "desc": "test",
+    "documentation": "https://elixir-lang.org/docs.html"
   }
 ]

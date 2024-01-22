@@ -36,6 +36,6 @@ import LanguageHistoryList from '@/components/LanguageHistoryList.vue'
   justify-content: center;
 }
 .forms{
-  width: 340px;
+  max-width: 340px;
 }
 </style>

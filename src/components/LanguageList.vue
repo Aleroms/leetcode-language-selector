@@ -16,7 +16,7 @@
       <Column field="times_used" header="Times Used"></Column>
       <Column field="last_used" header="Last Used">
         <template #body="slotProps">
-          {{ slotProps.data.times_used > 0 ? slotProps.data.last_used : 'not used yet' }}...
+          {{ slotProps.data.times_used > 0 ? slotProps.data.last_used : 'not used yet...' }}
         </template>
       </Column>
       <Column header="remove">

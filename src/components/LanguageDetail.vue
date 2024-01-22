@@ -2,17 +2,22 @@
   <Panel toggleable>
     <template #header>
       <div class="header">
-        <img width="40" height="40" src="/svg/ruby.svg" alt="ruby" />
-        <span>Ruby</span>
+        <img width="40" height="40" :src="`/svg/${item.url}`" alt="ruby" />
+        <span>{{ item.name }}</span>
       </div>
     </template>
     <p>this is where the description goes</p>
-    <a href="https://www.ruby-lang.org/en/documentation/">Official documentation</a>
+    <a :href="`${item.documentation}`">Official documentation</a>
   </Panel>
 </template>
 
 <script setup>
 import Panel from 'primevue/panel'
+defineProps({
+  item: {
+    type: Object
+  }
+})
 </script>
 
 <style lang="scss" scoped>
