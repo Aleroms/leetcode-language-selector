@@ -1,8 +1,7 @@
 <template>
   <div class="manage-wrapper">
     <div class="manage-banner">
-      <LeetcodeIcon :width="80" :height="80" />
-      <h1>add languages you want to code in ...</h1>
+      <AddLanguageBanner />
       <div class="forms">
         <SelectForm />
         <OptionsForm />
@@ -15,12 +14,12 @@
 </template>
 
 <script setup>
-import LeetcodeIcon from '@/components/LeetcodeIcon.vue'
 import Divider from 'primevue/divider'
 import SelectForm from '@/components/forms/SelectForm.vue'
 import OptionsForm from '@/components/forms/OptionsForm.vue'
 import LanguageList from '@/components/LanguageList.vue'
 import LanguageHistoryList from '@/components/LanguageHistoryList.vue'
+import AddLanguageBanner from '@/components/AddLanguageBanner.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -35,7 +34,7 @@ import LanguageHistoryList from '@/components/LanguageHistoryList.vue'
   align-items: center;
   justify-content: center;
 }
-.forms{
+.forms {
   max-width: 340px;
 }
 </style>

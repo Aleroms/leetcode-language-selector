@@ -6,7 +6,7 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
   state: () => ({
     userLanguages: useLocalStorage('userLanguages', []),
     history: useLocalStorage('history', []),
-    options: useLocalStorage('options', { challenges: 0, include_recent: false }),
+    options: useLocalStorage('options', { challenges: 1, exclude_recent: false }),
     dateSelected: useLocalStorage('dateSelected', Date()),
     collection: languages,
     hasSelectedToday: false,
@@ -43,14 +43,15 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
     getTodaysLanguage() {
       const today = new Date()
       this.hasSelectedToday = this.dateSelected === today.toDateString('en-US')
+      console.log(this.userLanguages.length)
 
+      if (this.userLanguages.length === 0)
+        throw 'no available languages xP\nadd languages in manage'
       if (!this.hasSelectedToday) {
-        const userLangLength = this.userLanguages.length
-
         //gets random languages for today
+        shuffleArray(this.userLanguages)
         for (let i = 0; i < this.options.challenges; i++) {
-          const rand = Math.floor(Math.random() * userLangLength)
-          let lang = this.userLanguages[rand]
+          let lang = this.userLanguages[i]
           console.log(lang)
 
           //modify language details
@@ -67,3 +68,11 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
     }
   }
 })
+
+//Fisher-Yates algorithm
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+}

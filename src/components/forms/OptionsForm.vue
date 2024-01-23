@@ -3,9 +3,7 @@
   <Panel header="options" toggleable class="options-panel">
     <form @submit.prevent="onSubmit" id="options-form">
       <div class="form-item">
-        <label for="challenges"
-          >How many to solve per day?</label
-        >
+        <label for="challenges">How many to solve per day?</label>
         <InputNumber
           v-model="value"
           inputId="challenges"
@@ -20,8 +18,8 @@
         }}</small>
       </div>
       <div class="form-item">
-        <label for="include_recent">Exclude language(s) most recently used? </label>
-        <Checkbox v-model="include_recent" :binary="true" inputId="include_recent" />
+        <label for="exclude_recent">Exclude language(s) most recently used? </label>
+        <Checkbox v-model="exclude_recent" :binary="true" inputId="exclude_recent" />
       </div>
       <Button label="submit" type="submit" />
     </form>
@@ -50,10 +48,10 @@ function validateField(value) {
 
   return true
 }
-const include_recent = ref(false)
+const exclude_recent = ref(false)
 const onSubmit = handleSubmit((values, action) => {
   if (values.value && values.value > 0 && values.value <= leetcodeStore.collection.length) {
-    leetcodeStore.updateOptions({ challenges: values.value, include_recent: include_recent.value })
+    leetcodeStore.updateOptions({ challenges: values.value, exclude_recent: exclude_recent.value })
     toast.add({
       severity: 'success',
       summary: 'Options Updated!',

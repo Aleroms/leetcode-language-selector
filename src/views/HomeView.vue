@@ -1,16 +1,38 @@
 <script setup>
 import Button from 'primevue/button'
+import Toast from 'primevue/toast'
 import Divider from 'primevue/divider'
 import LanguageDetail from '@/components/LanguageDetail.vue'
 import ProgressSpinner from 'primevue/progressspinner'
 import Skeleton from 'primevue/skeleton'
 import { useLeetcodeStore } from '@/stores/programmingLanguages'
-import { ref } from 'vue'
+import { useToast } from 'primevue/usetoast'
+import { computed } from 'vue'
 const leetcodeStore = useLeetcodeStore()
-const todaysLanguage = ref(leetcodeStore.history[leetcodeStore.history.length - 1])
+const toast = useToast()
+// const todaysLanguage = ref(leetcodeStore.history[leetcodeStore.history.length - 1])
+// console.log(todaysLanguage.value)
+const todaysLanguage = computed(() => {
+  return leetcodeStore.history.length > 0
+    ? leetcodeStore.history[leetcodeStore.history.length - 1]
+    : [{ name: 'unknown', url: '/favico.ico' }]
+})
+const handleClick = () => {
+  try {
+    leetcodeStore.getTodaysLanguage()
+  } catch (error) {
+    toast.add({
+      severity: 'error',
+      summary: error,
+      life: 3000
+    })
+    console.log(error)
+  }
+}
 </script>
 
 <template>
+  <Toast />
   <div class="home-wrapper">
     <div class="banner">
       <ProgressSpinner v-if="!leetcodeStore.hasSelectedToday" />
@@ -31,21 +53,16 @@ const todaysLanguage = ref(leetcodeStore.history[leetcodeStore.history.length - 
       <Button
         label="randomize"
         icon="pi pi-sync"
-        @click="leetcodeStore.getTodaysLanguage"
+        @click="handleClick"
         :disabled="leetcodeStore.hasSelectedToday"
       />
     </div>
     <Divider />
     <h2>Highlight Language</h2>
     <div v-if="leetcodeStore.hasSelectedToday">
-      <div v-if="todaysLanguage.length > 1">
-        <div v-for="(lang, index) in todaysLanguage" :key="lang.name">
-          <h2 v-if="index > 0">Fallback Language</h2>
-          <LanguageDetail :item="lang" />
-        </div>
-      </div>
-      <div v-else>
-        <LanguageDetail />
+      <div v-for="(lang, index) in todaysLanguage" :key="lang.name">
+        <h2 v-if="index > 0">Fallback Language</h2>
+        <LanguageDetail :item="lang" />
       </div>
     </div>
     <div v-else>

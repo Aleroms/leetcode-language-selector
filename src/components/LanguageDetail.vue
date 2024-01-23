@@ -2,7 +2,12 @@
   <Panel toggleable>
     <template #header>
       <div class="header">
-        <img width="40" height="40" :src="`/svg/${item.url}`" alt="ruby" />
+        <img
+          width="40"
+          height="40"
+          :src="item.url !== undefined ? `/svg/${item.url}` : '/favicon.ico'"
+          alt="ruby"
+        />
         <span>{{ item.name }}</span>
       </div>
     </template>

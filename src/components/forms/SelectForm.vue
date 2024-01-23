@@ -1,4 +1,5 @@
 <template>
+  <Toast />
   <form @submit.prevent="handleSubmit" id="language-selector">
     <Dropdown
       v-model="dropDownItem"
@@ -35,15 +36,22 @@
 <script setup>
 import Dropdown from 'primevue/dropdown'
 import Button from 'primevue/button'
+import Toast from 'primevue/toast'
+import { useToast } from 'primevue/usetoast'
 import { ref } from 'vue'
 import { useLeetcodeStore } from '@/stores/programmingLanguages'
 const leetcodeStore = useLeetcodeStore()
+const toast = useToast()
 const dropDownItem = ref('')
 const handleSubmit = () => {
-
   if (dropDownItem.value !== '') {
     leetcodeStore.add(dropDownItem.value)
     dropDownItem.value = ''
+    toast.add({
+      severity: 'success',
+      summary: 'added!',
+      life: 1000
+    })
   }
 }
 </script>
