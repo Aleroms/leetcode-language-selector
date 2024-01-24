@@ -48,10 +48,18 @@ export const useLeetcodeStore = defineStore('leetcodeStore', {
       if (this.userLanguages.length === 0)
         throw 'no available languages xP\nadd languages in manage'
       if (!this.hasSelectedToday) {
+        //exclude recent
+        let languageCollection = this.userLanguages
+        if (this.options.exclude_recent && this.history.length > 1) {
+          languageCollection = languageCollection.filter((lang) => {
+            const top = this.history[this.history.length - 1]
+            return lang.name !== top.name
+          })
+        }
         //gets random languages for today
-        shuffleArray(this.userLanguages)
+        shuffleArray(languageCollection)
         for (let i = 0; i < this.options.challenges; i++) {
-          let lang = this.userLanguages[i]
+          let lang = languageCollection[i]
           console.log(lang)
 
           //modify language details
