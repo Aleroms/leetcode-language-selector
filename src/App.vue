@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import { ref, onBeforeMount } from 'vue'
 import { usePrimeVue } from 'primevue/config'
 import { useLeetcodeStore } from './stores/programmingLanguages'
+import { useThemeStore } from './stores/theme'
 
 //primevue
 import Menubar from 'primevue/menubar'
@@ -12,8 +13,9 @@ import Divider from 'primevue/divider'
 
 import LeetcodeIcon from '@/components/LeetcodeIcon.vue'
 
+const themeStore = useThemeStore()
 const router = useRouter()
-const currentTheme = ref('lara-light-green')
+const currentTheme = ref(themeStore.theme)
 const PrimeVue = usePrimeVue()
 const items = ref([
   {
@@ -35,6 +37,7 @@ const toggleTheme = () => {
   let nextTheme = currentTheme.value === 'lara-light-green' ? 'lara-dark-green' : 'lara-light-green'
   PrimeVue.changeTheme(currentTheme.value, nextTheme, 'theme-link', () => {})
   currentTheme.value = nextTheme
+  themeStore.toggleTheme(currentTheme.value)
 }
 onBeforeMount(() => {
   leetcodeStore.initialize()
@@ -45,7 +48,9 @@ onBeforeMount(() => {
   <header>
     <Menubar :model="items">
       <template #start>
-        <LeetcodeIcon :width="35" :height="45" />
+        <RouterLink to="/">
+          <LeetcodeIcon :width="35" :height="45" />
+        </RouterLink>
       </template>
       <template #end>
         <div class="card-start">
@@ -56,7 +61,8 @@ onBeforeMount(() => {
           >
             <Button outlined icon="pi pi-github" severity="secondary" />
           </a>
-          <Button outlined icon="pi pi-sun" @click="toggleTheme" severity="secondary" />
+          <!-- dear dev. Fuck this shit -->
+          <!-- <Button outlined icon="pi pi-sun" @click="toggleTheme" severity="secondary" /> -->
         </div>
       </template>
     </Menubar>

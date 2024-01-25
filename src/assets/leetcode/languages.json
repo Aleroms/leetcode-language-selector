@@ -2,115 +2,115 @@
   {
     "name": "C++",
     "url": "cpp.svg",
-    "desc": "test",
+    "desc": "C++ is a versatile, high-performance programming language often used for system/application development.",
     "documentation": "https://cplusplus.com/"
   },
   {
     "name": "Java",
     "url": "java.svg",
-    "desc": "test",
+    "desc": "Java is an object-oriented, class-based language known for its portability and widespread use in web and mobile applications.",
     "documentation": "https://docs.oracle.com/en/java/"
   },
   {
     "name": "Python",
     "url": "python.svg",
-    "desc": "test",
+    "desc": "Python is a versatile, easy-to-read programming language with a broad range of applications, including web development and data analysis.",
     "documentation": "https://docs.python.org/3/"
   },
   {
     "name": "Python3",
     "url": "python.svg",
-    "desc": "test",
+    "desc": "Python is a versatile, easy-to-read programming language with a broad range of applications, including web development and data analysis.",
     "documentation": "https://docs.python.org/3/"
   },
   {
     "name": "C",
     "url": "c.svg",
-    "desc": "test",
+    "desc": "C is a foundational, procedural programming language commonly used for system-level programming and embedded systems.",
     "documentation": "https://devdocs.io/c/"
   },
   {
     "name": "C#",
     "url": "csharp.svg",
-    "desc": "test",
+    "desc": "C# is a modern, object-oriented language developed by Microsoft, widely used for building Windows applications and web services.",
     "documentation": "https://learn.microsoft.com/en-us/dotnet/csharp/"
   },
   {
     "name": "JavaScript",
     "url": "javascript.svg",
-    "desc": "test",
+    "desc": "JavaScript is a dynamic scripting language primarily used for web development to enhance interactivity and create dynamic content.",
     "documentation": "https://developer.mozilla.org/"
   },
   {
     "name": "TypeScript",
     "url": "typescript.svg",
-    "desc": "test",
+    "desc": "TypeScript is a superset of JavaScript that adds static typing, making it more scalable and maintainable for large codebases.",
     "documentation": "https://www.typescriptlang.org/docs/"
   },
   {
     "name": "PHP",
     "url": "php.svg",
-    "desc": "test",
+    "desc": "PHP is a server-side scripting language designed for web development, particularly for building dynamic web pages.",
     "documentation": "https://www.php.net/docs.php"
   },
   {
     "name": "Swift",
     "url": "swift.svg",
-    "desc": "test",
+    "desc": "Swift is a powerful and intuitive programming language developed by Apple for building iOS, macOS, watchOS, and tvOS applications.",
     "documentation": "https://www.swift.org/documentation/"
   },
   {
     "name": "Kotlin",
     "url": "koltin.svg",
-    "desc": "test",
+    "desc": "Kotlin is a concise, expressive programming language interoperable with Java, commonly used for Android app development.",
     "documentation": "https://kotlinlang.org/docs/home.html"
   },
   {
     "name": "Dart",
     "url": "dart.svg",
-    "desc": "test",
+    "desc": "Dart is a client-optimized programming language used for building cross-platform mobile, web, and server applications.",
     "documentation": "https://dart.dev/guides"
   },
   {
     "name": "Go",
     "url": "go.svg",
-    "desc": "test",
+    "desc": "Go, also known as Golang, is a statically typed language developed by Google, known for its simplicity and efficiency in building scalable systems.",
     "documentation": "https://go.dev/doc/"
   },
   {
     "name": "Ruby",
     "url": "ruby.svg",
-    "desc": "test",
+    "desc": "Ruby is a dynamic, object-oriented programming language known for its elegant syntax and focus on developer happiness.",
     "documentation": "https://www.ruby-lang.org/en/documentation/"
   },
   {
     "name": "Scala",
     "url": "scala.svg",
-    "desc": "test",
+    "desc": "Scala is a versatile programming language that combines object-oriented and functional programming paradigms, often used for scalable systems.",
     "documentation": "https://docs.scala-lang.org/"
   },
   {
     "name": "Rust",
     "url": "rust.svg",
-    "desc": "test",
+    "desc": "Rust is a systems programming language that prioritizes safety and performance without sacrificing control over low-level details.",
     "documentation": "https://doc.rust-lang.org/beta/"
   },
   {
     "name": "Racket",
     "url": "racket.svg",
-    "desc": "test",
+    "desc": "Racket is a general-purpose, multi-paradigm programming language often used for language-oriented programming.",
     "documentation": "https://docs.racket-lang.org/"
   },
   {
     "name": "Erlang",
     "url": "erlang.svg",
-    "desc": "test",
+    "desc": "Erlang is a concurrent, functional programming language designed for building highly scalable and fault-tolerant systems.",
     "documentation": "https://www.erlang.org/docs"
   },
   {
     "name": "Elixir",
     "url": "elixir-lang-icon.svg",
-    "desc": "test",
+    "desc": "Elixir is a dynamic, functional language built on the Erlang VM, known for its scalability and fault-tolerant features.",
     "documentation": "https://elixir-lang.org/docs.html"
   }
 ]

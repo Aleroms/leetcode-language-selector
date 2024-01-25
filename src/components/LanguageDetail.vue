@@ -11,7 +11,7 @@
         <span>{{ item.name }}</span>
       </div>
     </template>
-    <p>this is where the description goes</p>
+    <p>{{ item.desc }}</p>
     <a :href="`${item.documentation}`">Official documentation</a>
   </Panel>
 </template>
