@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import 'primevue/resources/themes/lara-light-green/theme.css'
-import 'primevue/resources/themes/lara-dark-green/theme.css'
+// import 'primevue/resources/themes/lara-dark-green/theme.css'
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
 

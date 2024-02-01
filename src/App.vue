@@ -61,7 +61,7 @@ onBeforeMount(() => {
           >
             <Button outlined icon="pi pi-github" severity="secondary" />
           </a>
-          <!-- <Button outlined icon="pi pi-sun" @click="toggleTheme" severity="secondary" /> -->
+          <Button outlined icon="pi pi-sun" @click="toggleTheme" severity="secondary" />
           <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer">
             <Button outlined icon="pi pi-external-link" label="Leetcode" severity="secondary" />
           </a>
